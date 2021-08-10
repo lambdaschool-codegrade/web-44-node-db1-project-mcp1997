@@ -1,21 +1,23 @@
+const db = require('../../data/db-config')
+
 const getAll = () => {
-  // DO YOUR MAGIC
+  return 'get wired'
 }
 
 const getById = id => {
-  // DO YOUR MAGIC
+  return 'get by id wired'
 }
 
 const create = account => {
-  // DO YOUR MAGIC
+  return 'create wired'
 }
 
 const updateById = (id, account) => {
-  // DO YOUR MAGIC
+  return 'update wired'
 }
 
 const deleteById = id => {
-  // DO YOUR MAGIC
+  return 'delete wired'
 }
 
 module.exports = {
