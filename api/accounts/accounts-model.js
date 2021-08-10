@@ -1,6 +1,6 @@
 const db = require('../../data/db-config')
 
-const getAll = () => {
+const getAll = async () => {
   return 'get wired'
 }
 
