@@ -28,7 +28,11 @@ router.get('/:id', checkAccountId, (req, res, next) => {
 })
 
 router.post('/', checkAccountPayload, checkAccountNameUnique, (req, res, next) => {
-  Account.create(req.body)
+  const { budget } = req.body
+  const trimmedName = req.body.name.trim()
+  const trimmedReqBody = { name: trimmedName, budget: budget }
+
+  Account.create(trimmedReqBody)
     .then(account => {
       res.status(201).json(account)
     })
@@ -36,7 +40,11 @@ router.post('/', checkAccountPayload, checkAccountNameUnique, (req, res, next) =
 })
 
 router.put('/:id', checkAccountId, checkAccountPayload, checkAccountNameUnique, (req, res, next) => {
-  Account.updateById(req.params.id, req.body)
+  const { budget } = req.body
+  const trimmedName = req.body.name.trim()
+  const trimmedReqBody = { name: trimmedName, budget: budget }
+
+  Account.updateById(req.params.id, trimmedReqBody)
     .then(updated => {
       res.status(200).json(updated)
     })
